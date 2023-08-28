@@ -37,8 +37,9 @@ const CreateServerPlan = () => {
             <th> قیمت (ماهیانه)</th>
             <th>جزعیات</th>
           </tr>
-          {simpleData.map((item) => (
+          {simpleData.map((item, index) => (
             <tr
+              key={index}
               onClick={() => setActivePlan(item.name)}
               className="w-full h-[80px] cursor-pointer  py-[20px] "
             >

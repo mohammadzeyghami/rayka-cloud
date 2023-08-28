@@ -9,7 +9,6 @@ interface Iprops {
   active?: string;
 }
 const CreateServerChecker = ({ active }: Iprops) => {
-  console.log(active);
   return (
     <div className="flex mt-[20px] items-center">
       {/* details */}

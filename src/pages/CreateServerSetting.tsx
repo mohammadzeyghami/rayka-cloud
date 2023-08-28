@@ -7,9 +7,10 @@ import UbuntoIcon from "../Icons/UbuntoIcon";
 import WindowsIcon from "../Icons/WindowsIcon";
 
 import WindowsCard from "../components/WindowsCard";
-import { useState } from "react";
+import { useState, useContext } from "react";
 const CreateServerSetting = () => {
   const [activeCard, setActiveCard] = useState<string>("");
+  const System;
   return (
     <>
       <div className=" mx-auto w-full  max-w-[700px] flex flex-wrap justify-center gap-[45px]">

@@ -1,14 +1,40 @@
+import { useLocation } from "react-router-dom";
+import NavbarTitle from "./NavbarTitle";
+
+export interface TitleDatasType {
+  flag?: string;
+  page?: string;
+  description?: string;
+  span?: string;
+}
 const Navbar = () => {
+  const location = useLocation();
+  let currentLocation = location.pathname;
+  currentLocation = currentLocation.slice(1, 6);
+  console.log("current:", currentLocation);
+
+  const TitleDatas: TitleDatasType[] = [
+    {
+      flag: "",
+      page: "صفحه اصلی",
+      description:
+        "اینجا میتونید سرور مجازی جدید بسازید و اون رو شخصی سازی کنید !",
+      span: "خوش امدید ",
+    },
+    {
+      flag: "cloud",
+      page: "ساخت سرور مجازی",
+      description:
+        "اینجا میتونید سرور مجازی جدید بسازید و اون رو شخصی سازی کنید !",
+    },
+  ];
+
+  const currentData = TitleDatas.filter((item) => item.flag == currentLocation);
+
+  console.log(currentData);
   return (
     <div className="w-full  flex justify-between">
-      <div className="flex flex-col justify-end gap-[15px]">
-        {/* you must show txt here with  */}
-        <h2 className="text-[41px] font-bold ">صفحه ی اصلی</h2>
-        <h4 className="text-gray text-[22px]">
-          <span className="text-green-dark">خوش امدید </span>
-          ازاینجا میتوانید یک دورنگاه از وضعیت سرور خود داشته باشید!
-        </h4>
-      </div>
+      <NavbarTitle data={currentData} />
       <div className="flex gap-[15px] justify-center items-center">
         {/* icons here */}
 
