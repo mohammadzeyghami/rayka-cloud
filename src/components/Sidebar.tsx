@@ -31,7 +31,7 @@ const Sidebar = () => {
           </div>
           {/* title */}
           {sActive ? (
-            <h3 className="text-green-light mb-[50px] whitespace-nowrap ">
+            <h3 className="text-green-lightest mb-[50px] whitespace-nowrap ">
               گزینه های اصلی
             </h3>
           ) : (
@@ -47,7 +47,9 @@ const Sidebar = () => {
             {sActive ? (
               <div className="flex flex-col justify-center items-center mr-[25px]">
                 <h2 className="text-[white] whitespace-nowrap">Home Page</h2>
-                <h2 className="whitespace-nowrap">صفحه اصلی</h2>
+                <h2 className="whitespace-nowrap  text-green-lightest">
+                  صفحه اصلی
+                </h2>
               </div>
             ) : (
               ""
@@ -63,7 +65,9 @@ const Sidebar = () => {
             {sActive ? (
               <div className="flex flex-col justify-center items-center mr-[25px] ">
                 <h2 className="text-[white] whitespace-nowrap">Cloud Server</h2>
-                <h2 className="whitespace-nowrap">سرور ابری</h2>
+                <h2 className="whitespace-nowrap text-green-lightest">
+                  سرور ابری
+                </h2>
               </div>
             ) : (
               ""
