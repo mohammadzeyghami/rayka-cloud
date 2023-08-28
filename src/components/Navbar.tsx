@@ -1,8 +1,4 @@
-import { useParams } from "react-router-dom";
-
 const Navbar = () => {
-  const test = useParams();
-  console.log(test);
   return (
     <div className="w-full  flex justify-between">
       <div className="flex flex-col justify-end gap-[15px]">

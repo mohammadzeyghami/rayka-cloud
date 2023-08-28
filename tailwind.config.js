@@ -21,6 +21,9 @@ export default {
         "3xl": "1845px",
         // => @media (min-width: 1536px) { ... }
       },
+      borderRadius: {
+        md: "22px",
+      },
     },
   },
   plugins: [],

@@ -8,3 +8,6 @@ body {
 .sysCard {
   box-shadow: 0px 0px 28.442747116088867px 0px rgba(0, 0, 0, 0.03);
 }
+.card-bg {
+  background: rgba(20, 167, 132, 0.1);
+}

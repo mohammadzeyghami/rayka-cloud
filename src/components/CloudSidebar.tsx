@@ -34,7 +34,7 @@ const CloudSidebar = () => {
             <Link to="/cloud/list" className="text-[white] mt-[10px]">
               لیست سرور ها
             </Link>
-            <Link to="#" className="text-[white] mt-[10px]">
+            <Link to="/cloud/create-server" className="text-[white] mt-[10px]">
               ساخت سرور جدید
             </Link>
           </div>
@@ -55,7 +55,7 @@ const CloudSidebar = () => {
             <Link to="/cloud/list" className="text-[white] mt-[10px]">
               لیست سرور ها
             </Link>
-            <Link to="#" className="text-[white] mt-[10px]">
+            <Link to="/cloud/create-server" className="text-[white] mt-[10px]">
               ساخت سرور جدید
             </Link>
           </div>
