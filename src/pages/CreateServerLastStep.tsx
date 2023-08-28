@@ -1,17 +1,8 @@
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 const CreateServerLastStep = () => {
-  const data = {
-    serverName: "سرورمن",
-    details: "this is test text",
-    ram: "32GB",
-    plan: "حرفه ای",
-    memory: "128GB",
-    cpu: "4 عدد",
-    network: "عمومی",
-    system: "windows 2016",
-    passwordType: "معمولی",
-    password: "something",
-  };
+  const data = useSelector((state) => state.data);
+
   return (
     <div className="flex flex-col h-full justify-between">
       <div className="h-full w-full flex justify-center mt-[45px] ">
@@ -28,31 +19,39 @@ const CreateServerLastStep = () => {
           </div>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            توضیحات:<span className="text-green-dark">{data.plan}</span>
+            نام پلن :<span className="text-green-dark">{data.plan}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            توضیحات: <span className="text-green-dark">{data.ram}</span>
+            مقدار رم :<span className="text-green-dark">{data.ram}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            توضیحات: <span className="text-green-dark">{data.memory}</span>
+            مقدار حافظه : <span className="text-green-dark">{data.memory}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            توضیحات:<span className="text-green-dark">{data.cpu}</span>{" "}
+            تعداد پردازنده :<span className="text-green-dark">
+              {data.cpu}
+            </span>{" "}
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            توضیحات:<span className="text-green-dark">{data.system}</span>
+            نوع شبکه :
+            <span className="text-green-dark">{data.networkType}</span>{" "}
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            توضیحات:<span className="text-green-dark">{data.passwordType}</span>
+            سیستم عامل :<span className="text-green-dark">{data.system}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            توضیحات:<span className="text-green-dark"> {data.password}</span>
+            نوع شبکه :
+            <span className="text-green-dark">{data.passwordType}</span>
+          </h2>
+          <h2 className="ml-[40px] whitespace-nowrap font-semibold">
+            {" "}
+            رمز عبور:<span className="text-green-dark"> {data.password}</span>
           </h2>
         </div>
       </div>

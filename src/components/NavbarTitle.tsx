@@ -1,5 +1,4 @@
 const NavbarTitle = ({ data }: any) => {
-  console.log("data", data[0]);
   return (
     <div className="flex flex-col justify-end gap-[15px]">
       {/* you must show txt here with  */}

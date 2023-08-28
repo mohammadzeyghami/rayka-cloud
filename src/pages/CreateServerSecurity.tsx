@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import EarthIcon from "../Icons/EarthIcon";
 import PrivateIcon from "../Icons/PrivateIcon";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addNetworkType } from "../features/AddDatas";
 
 const CreateServerSecurity = () => {
   const [activeSecurity, setActiveSecurity] = useState<string>("");
+
+  const dispatch = useDispatch();
   return (
     <div className="flex flex-col h-full justify-between">
       <div className="h-full flex justify-center gap-[20px] pt-[100px]">
@@ -21,14 +25,14 @@ const CreateServerSecurity = () => {
         </div>
         <div
           onClick={() => {
-            setActiveSecurity("earth");
+            setActiveSecurity("public");
           }}
           className={`${
-            activeSecurity === "earth" ? "opacity-100" : "opacity-50"
+            activeSecurity === "public" ? "opacity-100" : "opacity-50"
           } flex flex-col items-center justify-center border-[1px] h-[208.338px] w-[155.4px] rounded-md border-green-dark`}
         >
           <EarthIcon />
-          <h3 className="mt-[30px] text-green-dark">Earth</h3>
+          <h3 className="mt-[30px] text-green-dark">Public</h3>
         </div>
       </div>
       <div className="flex justify-center gap-[10px] mt-[50px] ">
@@ -39,6 +43,9 @@ const CreateServerSecurity = () => {
           مرحله قبل
         </Link>
         <Link
+          onClick={() => {
+            dispatch(addNetworkType(activeSecurity));
+          }}
           to={"/cloud/create-server/password"}
           className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
         >

@@ -5,12 +5,15 @@ import MoreIcon from "../Icons/MoreIcon";
 import RockeIcons from "../Icons/RockeIcons";
 import UbuntoIcon from "../Icons/UbuntoIcon";
 import WindowsIcon from "../Icons/WindowsIcon";
-
+import { useDispatch } from "react-redux";
 import WindowsCard from "../components/WindowsCard";
-import { useState, useContext } from "react";
+import { useState } from "react";
+import { addSystemType } from "../features/AddDatas";
+
 const CreateServerSetting = () => {
   const [activeCard, setActiveCard] = useState<string>("");
-  const System;
+
+  const dispatch = useDispatch();
   return (
     <>
       <div className=" mx-auto w-full  max-w-[700px] flex flex-wrap justify-center gap-[45px]">
@@ -78,6 +81,7 @@ const CreateServerSetting = () => {
           مرحله قبل
         </Link>
         <Link
+          onClick={() => dispatch(addSystemType(activeCard))}
           to={"/cloud/create-server/plan"}
           className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
         >

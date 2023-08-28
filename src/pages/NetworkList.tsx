@@ -1,14 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import RefreshIcon from "../Icons/refreshIcon";
-
+import { useSelector, useDispatch } from "react-redux";
 import WindowsIcon from "../Icons/WindowsIcon";
 import MoreIcon from "../Icons/MoreIcon";
 import TurnOffIcon from "../Icons/TurnOffIcon";
 import RemoveIcon from "../Icons/RemoveIcon";
 
 const NetworkList = () => {
-  const test = useLocation();
-  console.log(test);
   return (
     <div className="w-full h-full justify-center pb-[50px] px-[50px]  ">
       <div className="w-full h-[calc(100%-150px)] bg-white overflow-y-auto rounded-2xl p-[18px]">

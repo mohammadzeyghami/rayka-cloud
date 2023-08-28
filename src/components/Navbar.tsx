@@ -11,8 +11,6 @@ const Navbar = () => {
   const location = useLocation();
   let currentLocation = location.pathname;
   currentLocation = currentLocation.slice(1, 6);
-  console.log("current:", currentLocation);
-
   const TitleDatas: TitleDatasType[] = [
     {
       flag: "",
@@ -31,7 +29,6 @@ const Navbar = () => {
 
   const currentData = TitleDatas.filter((item) => item.flag == currentLocation);
 
-  console.log(currentData);
   return (
     <div className="w-full  flex justify-between">
       <NavbarTitle data={currentData} />

@@ -9,24 +9,13 @@ import CreateServerNetwork from "./pages/CreateServerNetwork";
 import CreateServerPassword from "./pages/CreateServerPassword";
 import CreateServerLastStep from "./pages/CreateServerLastStep";
 import CreateServerSecurity from "./pages/CreateServerSecurity";
-import { useState } from "react";
-import { DatasContext } from "./contexts/UsernameContext";
+
+import { store } from "./stores/store";
+import { Provider } from "react-redux";
 
 function App() {
-  const [Datas, setDatas] = useState({
-    serverName: "",
-    details: "",
-    planName: "",
-    ram: "",
-    memory: "",
-    cpu: "",
-    networkType: "",
-    systemType: "",
-    passwordType: "",
-    password: "",
-  });
   return (
-    <DatasContext.Provider value={Datas}>
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -61,7 +50,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </DatasContext.Provider>
+    </Provider>
   );
 }
 

@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import AlarmIcon from "../Icons/AlarmIcon";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  addCpu,
+  addMemory,
+  addPlanName,
+  addPrice,
+  addRam,
+} from "../features/AddDatas";
 interface DataType {
   name: string;
   ram: string;
@@ -21,7 +29,8 @@ const simpleData: DataType[] = [
 ];
 
 const CreateServerPlan = () => {
-  const [activePlan, setActivePlan] = useState<string>("");
+  const dispatch = useDispatch();
+  const [activePlan, setActivePlan] = useState<any>();
   return (
     <div className="flex flex-col justify-between  h-full">
       <div
@@ -40,12 +49,21 @@ const CreateServerPlan = () => {
           {simpleData.map((item, index) => (
             <tr
               key={index}
-              onClick={() => setActivePlan(item.name)}
+              onClick={() => {
+                setActivePlan({
+                  name: item.name,
+                  ram: item.ram,
+                  memory: item.memory,
+                  cpu: item.cpu,
+                  price: item.price,
+                  details: item.details,
+                });
+              }}
               className="w-full h-[80px] cursor-pointer  py-[20px] "
             >
               <td className=" relative">
                 <div className="rounded-full flex absolute top-8  right-5 justify-center items-center border-green-dark gap-[10px] w-[15px] h-[15px] border-[1px] ">
-                  {activePlan === item.name && (
+                  {activePlan?.name === item.name && (
                     <div className="bg-green-dark inline w-[11px]   rounded-full h-[11px]" />
                   )}
                 </div>
@@ -72,8 +90,17 @@ const CreateServerPlan = () => {
           مرحله قبل
         </Link>
         <Link
+          onClick={() => {
+            dispatch(addPlanName(activePlan.name));
+            dispatch(addRam(activePlan.ram));
+            dispatch(addCpu(activePlan.cpu));
+            dispatch(addPrice(activePlan.price));
+            dispatch(addMemory(activePlan.memory));
+          }}
           to={"/cloud/create-server/network"}
-          className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
+          className={`rounded-md w-[184px] h-[54px] flex justify-center  items-center ${
+            activePlan ? "bg-green-dark" : "hidden"
+          } text-white text-[16px]`}
         >
           گام بعدی
         </Link>
