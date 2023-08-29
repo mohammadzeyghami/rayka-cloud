@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addPassword } from "../features/AddDatas";
 const validPassword = new RegExp("^(?=.*?[A-Za-z])(?=.*?[0-8]).{6,}$");
 
 const CreateServerPassword = () => {
+  const dispatch = useDispatch();
   const [password, setPassword] = useState<string>("");
   const [message, setmessage] = useState<boolean>(false);
   const [passwordFormat, setPasswordFormat] = useState<boolean>(false);
@@ -101,6 +104,9 @@ const CreateServerPassword = () => {
           password == passwordCheck && (
             <div className="">
               <Link
+                onClick={() => {
+                  dispatch(addPassword(password));
+                }}
                 to={"/cloud/create-server/last-step"}
                 className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
               >

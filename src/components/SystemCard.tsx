@@ -1,4 +1,6 @@
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
+/* eslint-disable */
+/* tslint:disable */
+import { PieChart, Pie, Cell } from "recharts";
 
 interface Iprops {
   title?: string;
@@ -31,7 +33,7 @@ const SystemCard = ({ title, des, data, color = "#EE0B0B" }: Iprops) => {
             paddingAngle={5}
             dataKey="value"
           >
-            {data.map((entry, index) => (
+            {data.map((entry: any, index: number) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}

@@ -26,7 +26,7 @@ const Home = () => {
         <SystemCard data={data2} title="پردازنده" color="#14A784" />
         <SystemCard data={data1} title="ترافیک" color="#EE0B0B" />
       </div>
-      <div className="flex justify-center flex-wrap gap-[24.5px]  3xl:justify-between">
+      <div className="flex justify-center flex-wrap gap-[24.5px] mb-[150px] 3xl:mb-[0]  3xl:justify-between">
         <ChartCard color="#EE0B0B" />
         <ChartCard color="#14A784" />
         <ChartCard color="#7056E8" />

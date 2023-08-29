@@ -1,7 +1,10 @@
+/* eslint-disable */
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import type { RootState } from "../stores/store";
 const CreateServerLastStep = () => {
-  const data = useSelector((state) => state.data);
+  const data = useSelector((state: RootState) => state.data);
+  console.log(data);
 
   return (
     <div className="flex flex-col h-full justify-between">
@@ -19,7 +22,7 @@ const CreateServerLastStep = () => {
           </div>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            نام پلن :<span className="text-green-light">{data.plan}</span>
+            نام پلن :<span className="text-green-light">{data.planName}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
@@ -43,13 +46,10 @@ const CreateServerLastStep = () => {
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            سیستم عامل :<span className="text-green-light">{data.system}</span>
+            سیستم عامل :
+            <span className="text-green-light">{data.systemType}</span>
           </h2>
-          <h2 className="ml-[40px] whitespace-nowrap font-semibold">
-            {" "}
-            نوع شبکه :
-            <span className="text-green-light">{data.passwordType}</span>
-          </h2>
+
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
             رمز عبور:<span className="text-green-light"> {data.password}</span>
