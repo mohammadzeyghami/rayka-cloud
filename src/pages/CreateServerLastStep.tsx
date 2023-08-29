@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 const CreateServerLastStep = () => {
   const data = useSelector((state) => state.data);
 
@@ -10,49 +10,58 @@ const CreateServerLastStep = () => {
           <div className="flex w-full ">
             <h2 className="ml-[40px] whitespace-nowrap font-semibold">
               نام سرور :{" "}
-              <span className="text-green-dark">{data.serverName}</span>
+              <span className="text-green-light">{data.serverName}</span>
             </h2>
             <h2 className="ml-[40px] whitespace-nowrap font-semibold">
               {" "}
-              توضیحات: <span className="text-green-dark"> {data.details}</span>
+              توضیحات: <span className="text-green-light"> {data.details}</span>
             </h2>
           </div>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            نام پلن :<span className="text-green-dark">{data.plan}</span>
+            نام پلن :<span className="text-green-light">{data.plan}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            مقدار رم :<span className="text-green-dark">{data.ram}</span>
+            مقدار رم :<span className="text-green-light">{data.ram}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            مقدار حافظه : <span className="text-green-dark">{data.memory}</span>
+            مقدار حافظه :{" "}
+            <span className="text-green-light">{data.memory}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            تعداد پردازنده :<span className="text-green-dark">
+            تعداد پردازنده :<span className="text-green-light">
               {data.cpu}
             </span>{" "}
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
             نوع شبکه :
-            <span className="text-green-dark">{data.networkType}</span>{" "}
+            <span className="text-green-light">{data.networkType}</span>{" "}
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            سیستم عامل :<span className="text-green-dark">{data.system}</span>
+            سیستم عامل :<span className="text-green-light">{data.system}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
             نوع شبکه :
-            <span className="text-green-dark">{data.passwordType}</span>
+            <span className="text-green-light">{data.passwordType}</span>
           </h2>
           <h2 className="ml-[40px] whitespace-nowrap font-semibold">
             {" "}
-            رمز عبور:<span className="text-green-dark"> {data.password}</span>
+            رمز عبور:<span className="text-green-light"> {data.password}</span>
           </h2>
+          <div className="w-full items-center mt-[30px] flex flex-col">
+            <h5 className="text-[18px] text-green-light opacity-50">
+              قیمت نهایی
+            </h5>
+            <h2 className="text-[25px] text-green-light font-bold">
+              {data.price}/ماهیانه
+            </h2>
+          </div>
         </div>
       </div>
       <div className="flex justify-center gap-[10px] mt-[50px] ">
@@ -63,7 +72,7 @@ const CreateServerLastStep = () => {
           مرحله قبل
         </Link>
         <Link
-          to={"/cloud/create-server/"}
+          to={"/"}
           className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
         >
           گام بعدی

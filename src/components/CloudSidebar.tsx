@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import ArrowIcon from "../Icons/ArrowIcon";
 import CloudIcon from "../Icons/CloudIcon";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 const CloudSidebar = () => {
+  const location = useLocation();
+  let currentLocation = location.pathname;
+
+  console.log(currentLocation);
   const [activeServer, setActiveServer] = useState<boolean>(false);
   const [activeShabake, setActiveShabake] = useState<boolean>(false);
   return (
@@ -30,11 +35,23 @@ const CloudSidebar = () => {
           <p className="text-[18px] text-[white]">سرور مجازی</p>
         </div>
         {activeServer && (
-          <div className={`flex flex-col mr-[20px] `}>
-            <Link to="/cloud/list" className="text-[white] mt-[10px]">
+          <div className={`flex flex-col mr-[10px] `}>
+            <Link
+              to="/cloud/list"
+              className={`text-[white] rounded-md px-[10px] mt-[10px] ${
+                currentLocation === "/cloud/list" ? "bg-green-dark" : ""
+              }`}
+            >
               لیست سرور ها
             </Link>
-            <Link to="/cloud/create-server" className="text-[white] mt-[10px]">
+            <Link
+              to="/cloud/create-server"
+              className={`text-[white] rounded-md px-[10px] mt-[10px] ${
+                currentLocation === "/cloud/create-server"
+                  ? "bg-green-dark"
+                  : ""
+              }`}
+            >
               ساخت سرور جدید
             </Link>
           </div>
@@ -51,11 +68,23 @@ const CloudSidebar = () => {
           <p className="text-[18px] text-[white]">شبکه</p>
         </div>
         {activeShabake && (
-          <div className={`flex flex-col mr-[20px] duration-300  `}>
-            <Link to="/cloud/list" className="text-[white] mt-[10px]">
+          <div className={`flex flex-col mr-[10px] duration-300  `}>
+            <Link
+              to="/cloud/list"
+              className={`text-[white] rounded-md px-[10px] mt-[10px] ${
+                currentLocation === "/cloud/list" ? "bg-green-dark" : ""
+              }`}
+            >
               لیست سرور ها
             </Link>
-            <Link to="/cloud/create-server" className="text-[white] mt-[10px]">
+            <Link
+              to="/cloud/create-server"
+              className={`text-[white] rounded-md px-[10px] mt-[10px] ${
+                currentLocation === "/cloud/create-server"
+                  ? "bg-green-dark"
+                  : ""
+              }`}
+            >
               ساخت سرور جدید
             </Link>
           </div>

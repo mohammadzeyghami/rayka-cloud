@@ -11,9 +11,10 @@ const Sidebar = () => {
     home,
     cloud,
   }
+
   const [sActive, setSactive] = useState<boolean>(false);
   const [sideBarItem, setSideBarItem] = useState<SidebarItems>(
-    SidebarItems.cloud
+    SidebarItems.home
   );
   return (
     <div className="w-full h-full bg-green-light rounded-bl-[50px] rounded-tl-[50px] pr-[90px]  relative ">
@@ -38,7 +39,11 @@ const Sidebar = () => {
             ""
           )}
           {/* home page */}
-          <Link to={"/"} className="flex  items-center mb-[25px]">
+          <Link
+            to={"/"}
+            onClick={() => setSideBarItem(SidebarItems.home)}
+            className="flex  items-center mb-[25px]"
+          >
             <div className="h-full flex items-center mt-[-10px] ">
               <HomeIcon
                 color={sideBarItem === SidebarItems.home ? "#fff" : "#1DC9A0"}
@@ -56,7 +61,13 @@ const Sidebar = () => {
             )}
           </Link>
           {/* cloud server */}
-          <Link to={"/"} className="flex  items-center mb-[25px] ">
+          <Link
+            to={"/cloud/list"}
+            onClick={() => {
+              setSideBarItem(SidebarItems.cloud);
+            }}
+            className="flex  items-center mb-[25px] "
+          >
             <div className="h-full flex items-center">
               <CloudIcon
                 color={sideBarItem === SidebarItems.cloud ? "#fff" : "#1DC9A0"}

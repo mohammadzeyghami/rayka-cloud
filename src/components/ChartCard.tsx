@@ -82,9 +82,9 @@ const ChartCard = ({ color }: Iprops) => {
           />
         </LineChart>
       </ResponsiveContainer>
-      <button className="z-20 absolute top-5 left-5 flex items-center gap-2 bg-[#F7F6FB] px-[5px] py-[8px]">
-        <ArrowIcon />
-        مــــاهـــیانه
+      <button className="z-20 absolute top-5 left-5  flex items-center justify-center gap-2 bg-[#F7F6FB] px-[5px] py-[8px]">
+        <ArrowIcon color="#000" />
+        <h2>مــــاهـــیانه</h2>
       </button>
     </div>
   );

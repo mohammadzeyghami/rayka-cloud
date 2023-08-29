@@ -83,7 +83,9 @@ const CreateServerSetting = () => {
         <Link
           onClick={() => dispatch(addSystemType(activeCard))}
           to={"/cloud/create-server/plan"}
-          className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
+          className={`rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px] ${
+            activeCard ? "" : "hidden"
+          }`}
         >
           گام بعدی
         </Link>

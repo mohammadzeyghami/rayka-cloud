@@ -47,7 +47,9 @@ const CreateServerSecurity = () => {
             dispatch(addNetworkType(activeSecurity));
           }}
           to={"/cloud/create-server/password"}
-          className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
+          className={`rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px] ${
+            activeSecurity ? "" : "hidden"
+          }`}
         >
           گام بعدی
         </Link>

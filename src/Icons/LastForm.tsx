@@ -1,7 +1,7 @@
 interface Iprops {
   color?: string;
 }
-const LastForm = ({ color = "#14A784" }: Iprops) => {
+const LastForm = ({ color }: Iprops) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
