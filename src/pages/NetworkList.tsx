@@ -13,7 +13,7 @@ const NetworkList = () => {
       <div className="w-full h-[calc(100%-150px)] bg-white overflow-y-auto rounded-2xl p-[18px]">
         <div className="h-[66px] bg-[#EEEEEE] p-[10px] rounded-[22px] w-full flex justify-between">
           <button className="w-[80px] bg-white h-[45px] flex justify-center items-center rounded-md">
-            <RefreshIcon />
+            <RefreshIcon color="#14A784" />
           </button>
           <Link
             to={"/cloud/create-server"}
