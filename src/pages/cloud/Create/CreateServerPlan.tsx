@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import AlarmIcon from "../Icons/AlarmIcon";
+import AlarmIcon from "../../../Icons/AlarmIcon";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -8,7 +8,7 @@ import {
   addPlanName,
   addPrice,
   addRam,
-} from "../features/AddDatas";
+} from "../../../features/AddDatas";
 interface DataType {
   name: string;
   ram: string;

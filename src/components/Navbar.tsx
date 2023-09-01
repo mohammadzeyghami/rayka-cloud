@@ -10,7 +10,8 @@ export interface TitleDatasType {
 const Navbar = () => {
   const location = useLocation();
   let currentLocation = location.pathname;
-  currentLocation = currentLocation.slice(1, 6);
+  currentLocation = currentLocation.split("/");
+  currentLocation = currentLocation[1];
   const TitleDatas: TitleDatasType[] = [
     {
       flag: "",
@@ -24,6 +25,16 @@ const Navbar = () => {
       page: "ساخت سرور مجازی",
       description:
         "اینجا میتونید سرور مجازی جدید بسازید و اون رو شخصی سازی کنید !",
+    },
+    {
+      flag: "users",
+      page: "لیست کاربران",
+      description: "اینجا میتونید کاربران رو ببینید!",
+    },
+    {
+      flag: "charts",
+      page: "چارت ها",
+      description: "اینجا میتونید جزعیات حسابتون رو ببینین !",
     },
   ];
 

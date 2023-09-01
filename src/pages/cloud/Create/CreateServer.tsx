@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import CreateServerChecker from "../components/CreateServerChecker";
+import CreateServerChecker from "../../../components/CreateServerChecker";
 
 const CreateServer = () => {
   return (

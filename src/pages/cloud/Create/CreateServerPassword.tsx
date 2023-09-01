@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPassword } from "../features/AddDatas";
+import { addPassword } from "../../../features/AddDatas";
 const validPassword = new RegExp("^(?=.*?[A-Za-z])(?=.*?[0-8]).{6,}$");
 
 const CreateServerPassword = () => {

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import type { RootState } from "../stores/store";
+import type { RootState } from "../../../stores/store";
 const CreateServerLastStep = () => {
   const data = useSelector((state: RootState) => state.data);
   console.log(data);

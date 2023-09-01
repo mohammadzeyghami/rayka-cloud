@@ -2,16 +2,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import NetworkList from "./pages/NetworkList";
-import CreateServer from "./pages/CreateServer";
-import CreateServerSetting from "./pages/CreateServerSetting";
-import CreateServerPlan from "./pages/CreateServerPlan";
-import CreateServerNetwork from "./pages/CreateServerNetwork";
-import CreateServerPassword from "./pages/CreateServerPassword";
-import CreateServerLastStep from "./pages/CreateServerLastStep";
-import CreateServerSecurity from "./pages/CreateServerSecurity";
+import CreateServer from "./pages/cloud/Create/CreateServer";
+import CreateServerSetting from "./pages/cloud/Create/CreateServerSetting";
+import CreateServerPlan from "./pages/cloud/Create/CreateServerPlan";
+import CreateServerNetwork from "./pages/cloud/Create/CreateServerNetwork";
+import CreateServerPassword from "./pages/cloud/Create/CreateServerPassword";
+import CreateServerLastStep from "./pages/cloud/Create/CreateServerLastStep";
+import CreateServerSecurity from "./pages/cloud/Create/CreateServerSecurity";
 
 import { store } from "./stores/store";
 import { Provider } from "react-redux";
+import Users from "./pages/users/Users";
+import Charts from "./pages/charts/charts";
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
                 element={<CreateServerLastStep />}
               />
             </Route>
+            <Route path="/users" element={<Users />}></Route>
+            <Route path="/charts" element={<Charts />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

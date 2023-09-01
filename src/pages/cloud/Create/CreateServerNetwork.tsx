@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addDetails, addPlanName } from "../features/AddDatas";
+import { addDetails, addPlanName } from "../../../features/AddDatas";
 
 const CreateServerNetwork = () => {
   const [serverName, setServerName] = useState<string>("");

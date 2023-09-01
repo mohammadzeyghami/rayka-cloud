@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import CentosIcon from "../Icons/CentosIcon";
-import DebainIcon from "../Icons/DebainIcon";
-import MoreIcon from "../Icons/MoreIcon";
-import RockeIcons from "../Icons/RockeIcons";
-import UbuntoIcon from "../Icons/UbuntoIcon";
-import WindowsIcon from "../Icons/WindowsIcon";
+import CentosIcon from "../../../Icons/CentosIcon";
+import DebainIcon from "../../../Icons/DebainIcon";
+import MoreIcon from "../../../Icons/MoreIcon";
+import RockeIcons from "../../../Icons/RockeIcons";
+import UbuntoIcon from "../../../Icons/UbuntoIcon";
+import WindowsIcon from "../../../Icons/WindowsIcon";
 import { useDispatch } from "react-redux";
-import WindowsCard from "../components/WindowsCard";
+import WindowsCard from "../../../components/WindowsCard";
 import { useState } from "react";
-import { addSystemType } from "../features/AddDatas";
+import { addSystemType } from "../../../features/AddDatas";
 
 const CreateServerSetting = () => {
   const [activeCard, setActiveCard] = useState<string>("");

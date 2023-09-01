@@ -1,21 +1,18 @@
 import { useState } from "react";
 import LogoActive from "./LogoActive";
 import HomeIcon from "../Icons/HomeIcon";
-import { Link } from "react-router-dom";
 import CloudIcon from "../Icons/CloudIcon";
 import HomeSidebar from "./HomeSidebar";
 import CloudSidebar from "./CloudSidebar";
+import { SidebarItem } from "../constants";
+import SidebarItems from "./SidebarItems";
+import UsersIcon from "../Icons/UsersIcon";
+import ChartsIcon from "../Icons/chartsIcon";
 
 const Sidebar = () => {
-  enum SidebarItems {
-    home,
-    cloud,
-  }
-
   const [sActive, setSactive] = useState<boolean>(false);
-  const [sideBarItem, setSideBarItem] = useState<SidebarItems>(
-    SidebarItems.home
-  );
+  const [sideBarItem, setSideBarItem] = useState<SidebarItem>(SidebarItem.home);
+
   return (
     <div className="w-full h-full bg-green-light rounded-bl-[50px] rounded-tl-[50px] pr-[90px]  relative ">
       {/* sidebar 1 */}
@@ -39,51 +36,59 @@ const Sidebar = () => {
             ""
           )}
           {/* home page */}
-          <Link
-            to={"/"}
-            onClick={() => setSideBarItem(SidebarItems.home)}
-            className="flex  items-center mb-[25px]"
+
+          <SidebarItems
+            activeIteam={SidebarItem.home}
+            address="/"
+            sActive={sActive}
+            setSideBarItem={setSideBarItem}
+            name="Home"
+            nameFarsi="صفحه اصلی"
           >
-            <div className="h-full flex items-center mt-[-10px] ">
-              <HomeIcon
-                color={sideBarItem === SidebarItems.home ? "#fff" : "#1DC9A0"}
-              />
-            </div>
-            {sActive ? (
-              <div className="flex flex-col justify-center items-center mr-[25px]">
-                <h2 className="text-[white] whitespace-nowrap">Home Page</h2>
-                <h2 className="whitespace-nowrap  text-green-lightest">
-                  صفحه اصلی
-                </h2>
-              </div>
-            ) : (
-              ""
-            )}
-          </Link>
+            <HomeIcon
+              color={sideBarItem === SidebarItem.home ? "#fff" : "#1DC9A0"}
+            />
+          </SidebarItems>
           {/* cloud server */}
-          <Link
-            to={"/cloud/list"}
-            onClick={() => {
-              setSideBarItem(SidebarItems.cloud);
-            }}
-            className="flex  items-center mb-[25px] "
+          <SidebarItems
+            activeIteam={SidebarItem.cloud}
+            address="/cloud/list"
+            sActive={sActive}
+            setSideBarItem={setSideBarItem}
+            name="Cloud Server"
+            nameFarsi="سرور ابری"
           >
-            <div className="h-full flex items-center">
-              <CloudIcon
-                color={sideBarItem === SidebarItems.cloud ? "#fff" : "#1DC9A0"}
-              />
-            </div>
-            {sActive ? (
-              <div className="flex flex-col justify-center items-center mr-[25px] ">
-                <h2 className="text-[white] whitespace-nowrap">Cloud Server</h2>
-                <h2 className="whitespace-nowrap text-green-lightest">
-                  سرور ابری
-                </h2>
-              </div>
-            ) : (
-              ""
-            )}
-          </Link>
+            <CloudIcon
+              color={sideBarItem === SidebarItem.cloud ? "#fff" : "#1DC9A0"}
+            />
+          </SidebarItems>
+          {/* users */}
+          <SidebarItems
+            address="users"
+            activeIteam={SidebarItem.users}
+            sActive={sActive}
+            setSideBarItem={setSideBarItem}
+            name="users"
+            nameFarsi="کاربران"
+          >
+            <UsersIcon
+              color={sideBarItem === SidebarItem.users ? "#fff" : "#1DC9A0"}
+            />
+          </SidebarItems>
+
+          {/*charts */}
+          <SidebarItems
+            address="charts"
+            activeIteam={SidebarItem.users}
+            sActive={sActive}
+            setSideBarItem={setSideBarItem}
+            name="charts"
+            nameFarsi="نمودار"
+          >
+            <ChartsIcon
+              color={sideBarItem === SidebarItem.charts ? "#fff" : "#1DC9A0"}
+            />
+          </SidebarItems>
 
           <div
             className={`w-[18px] h-[67px] cursor-pointer flex text-green-dark font-bold text-[18px]
@@ -97,8 +102,8 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {sideBarItem === SidebarItems.home && <HomeSidebar />}
-      {sideBarItem === SidebarItems.cloud && <CloudSidebar />}
+      {sideBarItem === SidebarItem.home && <HomeSidebar />}
+      {sideBarItem === SidebarItem.cloud && <CloudSidebar />}
     </div>
   );
 };

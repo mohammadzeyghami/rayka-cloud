@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import EarthIcon from "../Icons/EarthIcon";
-import PrivateIcon from "../Icons/PrivateIcon";
+import EarthIcon from "../../../Icons/EarthIcon";
+import PrivateIcon from "../../../Icons/PrivateIcon";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addNetworkType } from "../features/AddDatas";
+import { addNetworkType } from "../../../features/AddDatas";
 
 const CreateServerSecurity = () => {
   const [activeSecurity, setActiveSecurity] = useState<string>("");
