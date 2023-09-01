@@ -9,7 +9,7 @@ import RefreshIcon from "../Icons/RefreshIcon";
 
 const NetworkList = () => {
   return (
-    <div className="w-full h-full justify-center pb-[50px] px-[50px]  ">
+    <div className="w-full h-full justify-center   ">
       <div className="w-full h-[calc(100%-150px)] bg-white overflow-y-auto rounded-2xl p-[18px]">
         <div className="h-[66px] bg-[#EEEEEE] p-[10px] rounded-[22px] w-full flex justify-between">
           <button className="w-[80px] bg-white h-[45px] flex justify-center items-center rounded-md">

@@ -3,4 +3,5 @@ export enum SidebarItem {
   cloud,
   users,
   charts,
+  settings,
 }

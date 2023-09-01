@@ -13,7 +13,8 @@ import CreateServerSecurity from "./pages/cloud/Create/CreateServerSecurity";
 import { store } from "./stores/store";
 import { Provider } from "react-redux";
 import Users from "./pages/users/Users";
-import Charts from "./pages/charts/charts";
+import Charts from "./pages/charts/Charts";
+import Settings from "./pages/settings/settings";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
             </Route>
             <Route path="/users" element={<Users />}></Route>
             <Route path="/charts" element={<Charts />}></Route>
+            <Route path="/settings" element={<Settings />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

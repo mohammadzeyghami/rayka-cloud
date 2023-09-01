@@ -8,10 +8,11 @@ export interface TitleDatasType {
   span?: string;
 }
 const Navbar = () => {
+  // here you can acsess your path and set your datas
   const location = useLocation();
-  let currentLocation = location.pathname;
-  currentLocation = currentLocation.split("/");
-  currentLocation = currentLocation[1];
+  const currentLocation = location.pathname;
+  const Path = currentLocation.split("/");
+  const FLagPath = Path[1];
   const TitleDatas: TitleDatasType[] = [
     {
       flag: "",
@@ -36,9 +37,14 @@ const Navbar = () => {
       page: "چارت ها",
       description: "اینجا میتونید جزعیات حسابتون رو ببینین !",
     },
+    {
+      flag: "settings",
+      page: "تنظیمات",
+      description: "اینجا میتونید تنظیمات حسابتون رو تغییر بدین!",
+    },
   ];
 
-  const currentData = TitleDatas.filter((item) => item.flag == currentLocation);
+  const currentData = TitleDatas.filter((item) => item.flag == FLagPath);
 
   return (
     <div className="w-full  flex justify-between">

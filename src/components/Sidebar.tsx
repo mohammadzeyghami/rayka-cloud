@@ -8,6 +8,7 @@ import { SidebarItem } from "../constants";
 import SidebarItems from "./SidebarItems";
 import UsersIcon from "../Icons/UsersIcon";
 import ChartsIcon from "../Icons/chartsIcon";
+import SettingIcon from "../Icons/SettingIcon";
 
 const Sidebar = () => {
   const [sActive, setSactive] = useState<boolean>(false);
@@ -79,7 +80,7 @@ const Sidebar = () => {
           {/*charts */}
           <SidebarItems
             address="charts"
-            activeIteam={SidebarItem.users}
+            activeIteam={SidebarItem.charts}
             sActive={sActive}
             setSideBarItem={setSideBarItem}
             name="charts"
@@ -87,6 +88,20 @@ const Sidebar = () => {
           >
             <ChartsIcon
               color={sideBarItem === SidebarItem.charts ? "#fff" : "#1DC9A0"}
+            />
+          </SidebarItems>
+
+          {/*settings */}
+          <SidebarItems
+            address="settings"
+            activeIteam={SidebarItem.settings}
+            sActive={sActive}
+            setSideBarItem={setSideBarItem}
+            name="settings"
+            nameFarsi="نمودار"
+          >
+            <SettingIcon
+              color={sideBarItem === SidebarItem.settings ? "#fff" : "#1DC9A0"}
             />
           </SidebarItems>
 

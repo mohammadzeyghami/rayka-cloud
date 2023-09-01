@@ -1,12 +1,18 @@
 interface Iprops {
   color?: string;
+  width?: string;
+  height?: string;
 }
-const SettingIcon = ({ color = "#23AC8C" }: Iprops) => {
+const SettingIcon = ({
+  color = "#23AC8C",
+  width = "30",
+  height = "30",
+}: Iprops) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="17"
-      height="17"
+      width={width}
+      height={height}
       viewBox="0 0 17 17"
       fill="none"
     >
