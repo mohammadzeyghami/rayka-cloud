@@ -1,8 +1,11 @@
 /* eslint-disable */
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import type { RootState } from "../../../stores/store";
+import { addToAllDatas } from "../../../features/Datas";
 const CreateServerLastStep = () => {
+  const dispatch = useDispatch();
   const data = useSelector((state: RootState) => state.data);
   console.log(data);
 
@@ -72,6 +75,7 @@ const CreateServerLastStep = () => {
           مرحله قبل
         </Link>
         <Link
+          onClick={() => dispatch(addToAllDatas(data))}
           to={"/"}
           className="rounded-md w-[184px] h-[54px] flex justify-center  items-center bg-green-dark text-white text-[16px]"
         >

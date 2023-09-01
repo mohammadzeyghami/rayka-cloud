@@ -52,9 +52,9 @@ const Navbar = () => {
       <div className="flex gap-[15px] justify-center items-center">
         {/* icons here */}
 
-        <img src="../../public/Bell (1).svg" className="cursor-pointer" />
-        <img src="../../public/Bell.svg" className="cursor-pointer" />
-        <img src="../../public/Ellipse 4.svg" className="cursor-pointer" />
+        <img src="../../Bell (1).svg" className="cursor-pointer" />
+        <img src="../../Bell.svg" className="cursor-pointer" />
+        <img src="../../Ellipse 4.svg" className="cursor-pointer" />
       </div>
     </div>
   );
