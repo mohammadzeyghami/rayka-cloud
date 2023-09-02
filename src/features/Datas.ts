@@ -14,11 +14,64 @@ export interface DatasState {
   price: string;
 }
 
-const initialState: DatasState[] = [];
+const DatasState: any = [
+  {
+    serverName: "custom1",
+    details: "this is test message",
+    planName: "something",
+    ram: "4Gb",
+    memory: "500GB",
+    cpu: "8",
+    networkType: "Private",
+    systemType: "Windows",
+    passwordType: "Private",
+    password: "Something",
+    price: "85$",
+  },
+  {
+    serverName: "custom1",
+    details: "this is test message",
+    planName: "something",
+    ram: "4Gb",
+    memory: "500GB",
+    cpu: "8",
+    networkType: "Private",
+    systemType: "Windows",
+    passwordType: "Private",
+    password: "Something",
+    price: "85$",
+  },
+  {
+    serverName: "custom1",
+    details: "this is test message",
+    planName: "something",
+    ram: "4Gb",
+    memory: "500GB",
+    cpu: "8",
+    networkType: "Private",
+    systemType: "Windows",
+    passwordType: "Private",
+    password: "Something",
+    price: "85$",
+  },
+  {
+    serverName: "custom1",
+    details: "this is test message",
+    planName: "something",
+    ram: "4Gb",
+    memory: "500GB",
+    cpu: "8",
+    networkType: "Private",
+    systemType: "Windows",
+    passwordType: "Private",
+    password: "Something",
+    price: "85$",
+  },
+];
 
 export const AllDataSlice = createSlice({
-  name: "data",
-  initialState,
+  name: "datas",
+  DatasState,
   reducers: {
     addToAllDatas: (state, action) => {
       state.push(action.payload);

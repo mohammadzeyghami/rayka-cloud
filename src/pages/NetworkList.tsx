@@ -6,8 +6,13 @@ import MoreIcon from "../Icons/MoreIcon";
 import TurnOffIcon from "../Icons/TurnOffIcon";
 import RemoveIcon from "../Icons/RemoveIcon";
 import RefreshIcon from "../Icons/RefreshIcon";
+import { useSelector } from "react-redux";
+import { RootState } from "../stores/store";
+import { DatasState } from "../features/AddDatas";
 
 const NetworkList = () => {
+  const data = useSelector((state: RootState) => state.allDatas);
+  console.log(data);
   return (
     <div className="w-full h-full justify-center   ">
       <div className="w-full h-[calc(100%-150px)] bg-white overflow-y-auto rounded-2xl p-[18px]">
@@ -36,27 +41,30 @@ const NetworkList = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className=" w-full h-[80px] py-[20px] ">
-                <td className="text-center">Anom</td>
-                <td className="flex justify-center items-center h-full text-center">
-                  <WindowsIcon />
-                </td>
-                <td className="text-center">184.231.115.24</td>
-                <td className="text-center">-</td>
-                <td className="text-center">خاموش</td>
-                <td className="text-center">2 ساعت قبل</td>
-                <td className="flex gap-[10px] justify-center ">
-                  <button className="rounded-[6px] p-[10px] bg-orange w-[34.5px] flex justify-center h-[32px] items-center">
-                    <MoreIcon color="#000" />
-                  </button>
-                  <button className="rounded-[6px] p-[10px] bg-green-light w-[34.5px] flex justify-center h-[32px] items-center">
-                    <TurnOffIcon color="#000" />
-                  </button>
-                  <button className="rounded-[6px] p-[10px] bg-red w-[34.5px] flex justify-center h-[32px] items-center">
-                    <RemoveIcon color="#000" />
-                  </button>
-                </td>
-              </tr>
+              {data?.map((item: any, index: number) => (
+                <tr className=" w-full h-[80px] py-[20px] ">
+                  <td className="text-center">{data.serverName}</td>
+                  <td className="flex justify-center items-center h-full text-center">
+                    <WindowsIcon />
+                  </td>
+                  <td className="text-center">{data.cpu}</td>
+                  <td className="text-center">{data.memory}</td>
+                  <td className="text-center">{data.networkType}</td>
+                  <td className="text-center">{data.price}</td>
+                  <td className="text-center">{data.ram}</td>
+                  <td className="flex gap-[10px] justify-center ">
+                    <button className="rounded-[6px] p-[10px] bg-orange w-[34.5px] flex justify-center h-[32px] items-center">
+                      <MoreIcon color="#000" />
+                    </button>
+                    <button className="rounded-[6px] p-[10px] bg-green-light w-[34.5px] flex justify-center h-[32px] items-center">
+                      <TurnOffIcon color="#000" />
+                    </button>
+                    <button className="rounded-[6px] p-[10px] bg-red w-[34.5px] flex justify-center h-[32px] items-center">
+                      <RemoveIcon color="#000" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
