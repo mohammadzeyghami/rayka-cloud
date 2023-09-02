@@ -14,7 +14,7 @@ export interface DatasState {
   price: string;
 }
 
-const DatasState: any = [
+const initialState: DatasState[] = [
   {
     serverName: "custom1",
     details: "this is test message",
@@ -70,8 +70,8 @@ const DatasState: any = [
 ];
 
 export const AllDataSlice = createSlice({
-  name: "datas",
-  DatasState,
+  name: "Alldatas",
+  initialState,
   reducers: {
     addToAllDatas: (state, action) => {
       state.push(action.payload);

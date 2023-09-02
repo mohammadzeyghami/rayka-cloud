@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import dataSlice from "../features/AddDatas";
-import { AllDataSlice } from "../features/Datas";
+import AllDataSlice from "../features/Datas";
 
 export const store = configureStore({
   reducer: {

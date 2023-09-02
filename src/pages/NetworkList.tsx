@@ -41,8 +41,8 @@ const NetworkList = () => {
               </tr>
             </thead>
             <tbody>
-              {data?.map((item: any, index: number) => (
-                <tr className=" w-full h-[80px] py-[20px] ">
+              {data?.map((data: any, index: number) => (
+                <tr key={index} className=" w-full h-[80px] py-[20px] ">
                   <td className="text-center">{data.serverName}</td>
                   <td className="flex justify-center items-center h-full text-center">
                     <WindowsIcon />
