@@ -33,11 +33,12 @@ const NetworkList = () => {
               <tr className="w-full text-green-light mb-[30px] border-b-[1px] border-opacity-20 border-green-light">
                 <th>نام سرور</th>
                 <th>سیستم عامل</th>
-                <th>آیپی ثابت</th>
-                <th>آیپی شناور</th>
-                <th>وضعیت</th>
-                <th>تاریخ ساخت</th>
-                <th>کنترل</th>
+                <th>پردازنده</th>
+                <th>حافظه</th>
+                <th>وضعیت شبکه</th>
+                <th>قیمت</th>
+                <th>حافظه رم</th>
+                <th> تنظیمات</th>
               </tr>
             </thead>
             <tbody>

@@ -10,27 +10,25 @@ const Users = () => {
     <div className="w-full h-full justify-center   ">
       <div className="w-full h-[calc(100%-150px)] bg-white overflow-y-auto rounded-2xl p-[18px]">
         <div className="h-[66px] bg-[#EEEEEE] p-[10px] rounded-[22px] w-full flex justify-between">
-          <button className="w-[80px] bg-white h-[45px] flex justify-center items-center rounded-md">
-            <RefreshIcon color="#14A784" />
-          </button>
+          <div></div>
           <Link
             to={"/cloud/create-server"}
             className="items-center flex px-[17px] bg-green-light rounded-md"
           >
-            <p className="text-white"> افزودن سرور جدید +</p>
+            <p className="text-white"> افزودن کاربر +</p>
           </Link>
         </div>
         <div>
           <table className="w-[95%] mx-auto mt-[20px]  items-center h-[90px] ">
             <thead>
               <tr className="w-full text-green-light mb-[30px] border-b-[1px] border-opacity-20 border-green-light">
-                <th>نام سرور</th>
-                <th>سیستم عامل</th>
-                <th>آیپی ثابت</th>
+                <th>نام </th>
+                <th>نام خانوادگی</th>
+                <th>شماره ی تلفن</th>
                 <th>آیپی شناور</th>
-                <th>وضعیت</th>
-                <th>تاریخ ساخت</th>
-                <th>کنترل</th>
+                <th>تاریخ تولد </th>
+                <th>سمت</th>
+                <th>تنظیمات</th>
               </tr>
             </thead>
             <tbody>
@@ -47,9 +45,7 @@ const Users = () => {
                   <button className="rounded-[6px] p-[10px] bg-orange w-[34.5px] flex justify-center h-[32px] items-center">
                     <MoreIcon color="#000" />
                   </button>
-                  <button className="rounded-[6px] p-[10px] bg-green-light w-[34.5px] flex justify-center h-[32px] items-center">
-                    <TurnOffIcon color="#000" />
-                  </button>
+
                   <button className="rounded-[6px] p-[10px] bg-red w-[34.5px] flex justify-center h-[32px] items-center">
                     <RemoveIcon color="#000" />
                   </button>
