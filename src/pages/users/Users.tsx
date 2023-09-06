@@ -1,15 +1,24 @@
-import { Link } from "react-router-dom";
-import MoreIcon from "../../Icons/MoreIcon";
-import RefreshIcon from "../../Icons/RefreshIcon";
-import RemoveIcon from "../../Icons/RemoveIcon";
-import TurnOffIcon from "../../Icons/TurnOffIcon";
-import WindowsIcon from "../../Icons/WindowsIcon";
+import { FixedSizeList as List } from "react-window";
+import { useRef, useState, useEffect } from "react";
 
 const Users = () => {
+  const [wrapperHeight, setWrapperHeight] = useState<number>(500);
+  const [wrapperWidth, setWrapperWidth] = useState<number>(500);
+  const Row = ({ index, style }) => <div style={style}>Column {index}</div>;
+  const test = useRef();
+  useEffect(() => {
+    setWrapperHeight(test?.current?.clientHeight);
+    setWrapperWidth(test?.current?.clientWidth);
+  }, [test]);
+
+  console.log(test?.current?.clientHeight);
   return (
-    <div className="w-full h-full justify-center   ">
-      <div className="w-full h-[calc(100%-150px)] bg-white overflow-y-auto rounded-2xl p-[18px]">
-        <div className="h-[66px] bg-[#EEEEEE] p-[10px] rounded-[22px] w-full flex justify-between">
+    <div className="w-full h-full justify-center">
+      <div
+        className="w-full h-[calc(100%-150px)] bg-white overflow-y-auto rounded-2xl p-[18px]"
+        ref={test}
+      >
+        {/* <div className="h-[66px] bg-[#EEEEEE] p-[10px] rounded-[22px] w-full flex justify-between">
           <div></div>
           <Link
             to={"/cloud/create-server"}
@@ -53,7 +62,18 @@ const Users = () => {
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
+
+        {/* react window */}
+
+        <List
+          height={wrapperHeight}
+          itemCount={1000}
+          itemSize={35}
+          width={wrapperWidth}
+        >
+          {Row}
+        </List>
       </div>
     </div>
   );
