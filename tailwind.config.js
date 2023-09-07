@@ -19,6 +19,7 @@ export default {
       },
       screens: {
         "3xl": "1845px",
+        "2xl": "1245px",
         // => @media (min-width: 1536px) { ... }
       },
       borderRadius: {

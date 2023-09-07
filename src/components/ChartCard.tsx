@@ -47,11 +47,14 @@ const data = [
 ];
 interface Iprops {
   color: string;
+  className?: string;
 }
 
-const ChartCard = ({ color }: Iprops) => {
+const ChartCard = ({ color, className }: Iprops) => {
   return (
-    <div className="max-w-[721px] w-full h-[261px] rounded-[22px] flex justify-center items-center relative  sysCard bg-white">
+    <div
+      className={`max-w-[721px] w-full h-[261px] rounded-[22px] flex justify-center items-center relative   bg-white ${className}`}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={500}

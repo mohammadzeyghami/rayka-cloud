@@ -1,12 +1,14 @@
 interface Iprops {
   color: string;
+  width: string;
+  height: string;
 }
-const CloudIcon = ({ color }: Iprops) => {
+const CloudIcon = ({ color, width = "32", height = "30" }: Iprops) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="30"
+      width={width}
+      height={height}
       viewBox="0 0 32 30"
       fill="none"
     >
