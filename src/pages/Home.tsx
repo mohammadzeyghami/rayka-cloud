@@ -1,4 +1,5 @@
 import CloudIcon from "../Icons/CloudIcon";
+import DocumentsIcon from "../Icons/DocumentsIcon";
 import SettingIcon from "../Icons/SettingIcon";
 import UsersIcon from "../Icons/UsersIcon";
 import ChartsIcon from "../Icons/chartsIcon";
@@ -14,7 +15,7 @@ const Home = () => {
   ];
   return (
     <div className="flex flex-col h-full max-w-[1550px]  gap-[25px] overflow-y-auto px-[50px]">
-      <div className="flex justify-center rounded-md bg-white items-center flex-wrap py-[20px]">
+      <div className="flex justify-center gap-[20px] rounded-md bg-white items-center flex-wrap py-[20px]">
         <SugCard>
           <div className="flex justify-center items-center gap-[10px] flex-col">
             <CloudIcon width="42" height="40" color="#14A784" />
@@ -59,11 +60,25 @@ const Home = () => {
           <div className="flex flex-col justify-start h-full w-full p-[20px]">
             <h5 className="border-b-[1px] border-[#000] opacity-60 border-opacity-20 pb-[10px]">
               {" "}
-              میزان فروش
+              کیف پول
             </h5>
-            <div className="pt-[10px]">
-              <div></div>
-              <div></div>
+            <div className="pt-[10px] flex flex-col gap-[10px] h-full">
+              <div className="w-full h-[50%] rounded-md bg-opacity-5 p-[10px] text-green-light font-bold bg-gray">
+                مصرف این ماه :
+                <div className="w- full h-full flex justify-center text-[25px] items-center">
+                  {" "}
+                  0 ریال
+                </div>
+              </div>
+
+              <div className="w-full h-[50%] rounded-md bg-opacity-5 p-[10px] text-green-light font-bold bg-gray">
+                {" "}
+                <span>اعتبار باقی مانده :</span>
+                <div className="w- full h-full flex justify-center text-[25px] items-center">
+                  {" "}
+                  0 ریال
+                </div>
+              </div>
             </div>
           </div>
         </Card>
@@ -73,19 +88,27 @@ const Home = () => {
               <div className="flex flex-col min-w-[300px]  justify-start h-full w-full flex-2  p-[20px]">
                 <h5 className="border-b-[1px] border-[#000] opacity-60 border-opacity-20 pb-[10px]">
                   {" "}
-                  میزان فروش
+                  اسناد
                 </h5>
-                <div className="pt-[10px]">charts</div>
+                <div className="w-full h-full cursor-pointer flex justify-center items-center">
+                  <div className="flex w-full justify-center flex-1 min-w-[180px]">
+                    در دست توسعه ...
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
           <div className="flex w-full h-full  gap-[20px]">
             <Card>
-              <div className="flex w-full flex-1 min-w-[180px]"></div>
+              <div className="flex w-full justify-center flex-1 min-w-[180px]">
+                در دست توسعه ...
+              </div>
             </Card>
             <Card>
               {" "}
-              <div className="flex w-full flex-1 min-w-[180px]"></div>
+              <div className="flex w-full justify-center flex-1 min-w-[180px]">
+                در دست توسعه ...
+              </div>
             </Card>
           </div>
         </div>
