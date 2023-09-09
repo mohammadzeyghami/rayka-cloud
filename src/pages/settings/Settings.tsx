@@ -4,9 +4,14 @@ import Portfolio from "../../components/Organisms/Portfolio";
 import InputRow from "../../components/Molecules/InputRow/InputRow";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../stores/store";
+import {
+  addPoprtfolioCity,
+  addPoprtfolioLastName,
+  addPoprtfolioName,
+} from "../../features/Profile";
 
 const Settings = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(Portfolio);
   const data = useSelector((state: RootState) => state.profile);
   const [name, setName] = useState<string>("");
   const [lastname, setLastName] = useState<string>("");
@@ -48,7 +53,14 @@ const Settings = () => {
           <button className="w-[100px] h-[40px]  text-[white] rounded-md bg-green-dark">
             انصراف
           </button>
-          <button className="w-[100px] h-[40px] text-[white] rounded-md bg-green-dark">
+          <button
+            onClick={() => {
+              dispatch(addPoprtfolioName(name));
+              dispatch(addPoprtfolioLastName(lastname));
+              dispatch(addPoprtfolioCity(country));
+            }}
+            className="w-[100px] h-[40px] text-[white] rounded-md bg-green-dark"
+          >
             ثبت
           </button>
         </div>
