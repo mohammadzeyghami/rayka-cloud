@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import NavbarTitle from "./NavbarTitle";
+import Portfolion from "./Organisms/Portfolio";
+import Portfolio from "./Organisms/Portfolio";
 
 export interface TitleDatasType {
   flag?: string;
@@ -54,7 +56,10 @@ const Navbar = () => {
 
         <img src="../../Bell (1).svg" className="cursor-pointer" />
         <img src="../../Bell.svg" className="cursor-pointer" />
-        <img src="../../Ellipse 4.svg" className="cursor-pointer" />
+
+        <Portfolio>
+          <img src="../../Ellipse 4.svg" className="cursor-pointer" />
+        </Portfolio>
       </div>
     </div>
   );

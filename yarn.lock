@@ -1515,7 +1515,7 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
+lodash@^4.17.19, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -1861,13 +1861,6 @@ react-transition-group@2.9.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
-
-react-window-scroller@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/react-window-scroller/-/react-window-scroller-1.0.10.tgz#7281b6ba34a2b147f19ba5ffd6de6fb3bfdb60c8"
-  integrity sha512-pgFX6O51cq7JmNVFcho9990dBHJJGgfGXucby7tviTrKqp/CJaKzt5AONYJ3SqWeBMh+N7/W9tvIl/7oMjq+2Q==
-  dependencies:
-    lodash "^4.17.20"
 
 react-window@^1.8.9:
   version "1.8.9"
