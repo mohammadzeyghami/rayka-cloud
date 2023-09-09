@@ -7,12 +7,17 @@ import { RootState } from "../../stores/store";
 
 const Settings = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state: RootState) => state);
+  const data = useSelector((state: RootState) => state.profile);
   const [name, setName] = useState<string>("");
   const [lastname, setLastName] = useState<string>("");
   const [job, setJob] = useState<string>("");
   const [country, setCountry] = useState<string>("");
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setName(data.name);
+    setLastName(data.lastName);
+    setJob(data.phoneNumber);
+    setCountry(data.city);
+  }, []);
   console.log(data);
   return (
     <div className="w-full h-full overflow-y-auto">
