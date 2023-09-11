@@ -23,7 +23,7 @@ const Settings = () => {
     setJob(data.phoneNumber);
     setCountry(data.city);
   }, []);
-
+  //  setting
   return (
     <div className="w-full h-full overflow-y-auto">
       <div className="w-full flex flex-col   gap-[10px] justify-start   h-full">
