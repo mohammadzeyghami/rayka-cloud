@@ -50,7 +50,7 @@ const VirtualTable = ({ Data }: Iprops) => {
             to={"/cloud/create-server"}
             className="items-center flex px-[17px] bg-green-light rounded-md"
           >
-            <p className="text-white"> افزودن کاربر جدید +</p>
+            <p className="text-white"> در دست توسعه ...</p>
           </Link>
         </div>
         {/* react window */}
